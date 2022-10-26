@@ -110,7 +110,7 @@ module.exports = {
       verbose: true,
       cleanOnceBeforeBuildPatterns: ['**/*', '!stats.json'],
     }),
-    /*
+    
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -121,7 +121,7 @@ module.exports = {
             ignore: ['*.DS_Store', 'Thumbs.db'],
           },
         },
-        {
+        /*{
           from: path.resolve(environment.paths.source, 'videos'),
           to: path.resolve(environment.paths.output, 'videos'),
           toType: 'dir',
@@ -129,9 +129,9 @@ module.exports = {
             ignore: ['*.DS_Store', 'Thumbs.db'],
           },
         },
+        */
       ],
     }),
-      */
   ].concat(htmlPluginEntries),
   target: 'web',
 };
