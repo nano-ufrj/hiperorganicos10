@@ -1,6 +1,7 @@
+/* Bootstrap */
 import '../scss/app.scss';
+import * as bootstrap from 'bootstrap';
 
-/* Your JS Code goes here */
 
 /* Demo JS */
 import './demo.js';

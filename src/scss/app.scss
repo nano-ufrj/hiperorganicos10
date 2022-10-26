@@ -1,26 +1,27 @@
-/* By Athlon Front-End Team */
-
-/* Core variables */
-@import 'base/vars';
-
-/* CSS Reset */
-@import 'base/reset';
-
-/* CSS print */
-@import 'base/print';
-
 /* Fonts */
-@import 'base/fonts';
+@import 'fonts';
 
-/* Mixins, helpers and functions */
-@import 'base/mixins';
+// Variable overrides first
+$primary: #f80;
+$enable-shadows: true;
+$prefix: "mo-";
 
-/* Vendor */
+// Then import Bootstrap
+@import "~bootstrap/scss/bootstrap";
 
-/* Components */
+.horizontal-group {
+    max-width: 100%;
+    padding: 0px;
+}
 
-/* Browser specific styles */
-@import 'dirty/hacks';
-
-/* Demo Page styles */
-@import 'demo';
+.horizontal-group > .row {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 100vh;
+    margin: 0px;
+}
+.horizontal-group > .row > .col {
+    display: inline-block;
+    padding-top: 60px;
+}
