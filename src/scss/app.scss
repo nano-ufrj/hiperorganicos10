@@ -1,34 +1,156 @@
-/* Fonts */
-@import 'fonts';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // Variable overrides first
 $primary: #f80;
+$body-color: #000;
 $enable-shadows: true;
 $prefix: "mo-";
+$accordion-button-icon: url("data:image/svg+xml,<?xml version='1.0' encoding='iso-8859-1'?><svg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 455 455' style='enable-background:new 0 0 455 455;' xml:space='preserve'><polygon points='455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 455,242.5 '/></svg>");
+$accordion-button-active-icon: $accordion-button-icon;
+$accordion-icon-transition: transform .2s ease-in-out;
+$accordion-icon-transform: rotate(45deg);
+$accordion-bg: "transparent";
+$accordion-button-bg: "transparent";
+$accordion-button-active-bg: "transparent";
+$accordion-button-active-color: "#000";
+$accordion-button-padding-y: "0.5rem";
+$accordion-border-width: "0px";
+$accordion-button-focus-border-color: "";
 
 // Then import Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+
+
+$margin-top: 120px;
+$font: 'Montserrat', sans-serif;
+
 html, body{
     height: 100%;
+    overflow: hidden;
+    font-family: $font;
+    font-weight: normal;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #9587c4;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #392778;
 }
 
 .horizontal-group {
     padding: 0px;
     overflow-x: auto;
-    white-space: nowrap;
+    overflow-y: hidden;
     height: 100%;
+    display: flex;
+    
+    .page {
+        height: 100%;
+        flex-direction: row;
+        flex-shrink: 0;
+        position: relative;
+        
+        h1 {
+            position: absolute;
+            transform: rotate(-90deg);
+            bottom: -30px;
+            left: 30px;
+            transform-origin: 0px 0%;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: -2px;
+        }
+
+        h3 {
+            font-size: 15px;
+            margin-bottom: -5px;
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+        
+        .container {
+            margin-top: $margin-top;
+            max-width: 100%;
+            height: calc(100% - $margin-top);
+
+            .row {
+                padding-left: 100px;
+                height: 100%;
+
+                .col {
+                    max-height: 100%;
+                    overflow-y: auto;
+                }
+
+                .col-transition{
+                    width: 300px;
+                    margin-top: -$margin-top;
+                    height: calc(100% + $margin-top);
+                    max-height: none;
+                    padding: 0px;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
 }
-.horizontal-group > .page {
+
+.accordion-item {
+    .accordion-button {
+        padding-left: 30px;
+
+        &::after {
+            position: absolute;
+            left: 0px;
+        }
+    }
+}
+
+
+$medium: 1200px;
+$small: 600px;
+
+#hero {
+    background-color: #FFF;
     width: 90%;
-    display: inline-block;
-    height: 100%;
 }
 
+#programacao {
+    background-color: #E32A8C;
+    width: 1130px;
+    @media screen and (max-width: $medium) {
+        width: 800px;
+    }
+    @media screen and (max-width: $small) {
+        width: 90%;
+    }
+}
 
+#hiperorganicos {
+    background-color: #000000;
+    color: #E32A8C;
+    width: 1300px;
+}
 
-
-#hero {background-color: #1E88E5;}
-#programacao {background-color: #673ab7;}
-#hiperorganicos {background-color: #ff9800;}
-#como-chegar {background-color: #00bcd4;}
+#comochegar {
+    width: 660px;
+    background-color: #E32A8C;
+}

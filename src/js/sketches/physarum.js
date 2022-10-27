@@ -1,7 +1,5 @@
-import config from './config'
-
 class Agent {
-	constructor(x, y, heading, color, trail, width, height){
+	constructor(x, y, heading, color, trail, width, height, config){
 		this.x = x;
 		this.y = y;
 		this.heading = heading;
@@ -9,6 +7,7 @@ class Agent {
 		this.trail = trail;
 		this.width = width;
 		this.height = height;
+		this.config = config;
 	}
 	
 	index(x, y) {
@@ -50,7 +49,7 @@ class Agent {
 		this.py = this.y;
 		this.x += speed * Math.cos(this.heading);
 		this.y += speed * Math.sin(this.heading);
-		if (config.wrap_around) {
+		if (this.config.wrap_around) {
 			if(this.x < 0 || this.x > this.width){
 				this.x = (this.x + this.width) % this.width;
 				this.px = this.x;
@@ -65,19 +64,20 @@ class Agent {
 	deposit(deposit_amount) {
 		const x = Math.round(this.x);
 		const y = Math.round(this.y);
-		if (x > 0 && y > 0 && x < this.width-1 && y < this.height-1)
+		if (x > 5 && y > 5 && x < this.width-5 && y < this.height-5)	
 			this.trail[this.index(x, y)] += deposit_amount;
 	}
 }
 
 class Physarum {
-	constructor(width, height, drawingContext, texture, textureWidth, textureHeight) {
+	constructor(width, height, drawingContext, texture, textureWidth, textureHeight, config) {
 		this.width = width;
 		this.height = height;
 		this.drawingContext = drawingContext;
 		this.texture = texture;
 		this.textureWidth = textureWidth;
 		this.textureHeight = textureHeight;
+		this.config = config;
 
 		this.trail = new Float32Array(width * height);
 		
@@ -92,19 +92,19 @@ class Physarum {
 	}
 	
 	addAgent(x, y, heading, color){
-		this.agents.push(new Agent(x, y, heading, color, this.trail, this.width, this.height));
+		this.agents.push(new Agent(x, y, heading, color, this.trail, this.width, this.height, this.config));
 	}
 	
 	update(){
 		const length = this.agents.length;		
 		for (var i = 0; i < length; i++) {
-			this.agents[i].senseAndRotate(config.sensor_angle, config.sensor_distance, config.random_turning, config.turning_speed);
-			this.agents[i].move(config.speed);
+			this.agents[i].senseAndRotate(this.config.sensor_angle, this.config.sensor_distance, this.config.random_turning, this.config.turning_speed);
+			this.agents[i].move(this.config.speed);
 		}
 		
 		//deposit
 		for (var i = 0; i < length; i++)
-			this.agents[i].deposit(config.deposit_amount);
+			this.agents[i].deposit(this.config.deposit_amount);
 		
 		//deposit combining with texture data
 		for(var y = 0; y < this.textureHeight; y+=2){
@@ -167,7 +167,7 @@ class Physarum {
 					old_trail[x + 1 + (y + 1) * this.width] * this.weight[8]
 				);
 
-				this.trail[x + y * this.width] = Math.min(1.0, diffused_value * config.decay_factor);
+				this.trail[x + y * this.width] = Math.min(1.0, diffused_value * this.config.decay_factor);
 			}
 		}
 	}

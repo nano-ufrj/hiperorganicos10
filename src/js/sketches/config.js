@@ -8,7 +8,7 @@ let config = {
     num_agents          : 4000,
     start_in_circle     : true, // otherwise start randomly
     random_turning      : false, // randomly turn within the limits of turning_speed
-    wrap_around         : false
+    wrap_around         : true
     //highlight_agents: false,
 }
 
