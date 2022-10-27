@@ -21,12 +21,13 @@ import './demo.js';
 const p5Hero = new p5(sketchHero, 'hero');
 
 const p5ProgramacaoTransition = new p5(sketchTransition, 'programacaoTransition');
-p5ProgramacaoTransition.setColor("#000000");
+p5ProgramacaoTransition.setColor("#E6227D");
 
 const p5ProgramacaoPlant = new p5(sketchPlant, "programacaoPlant");
 
 const p5HiperorganicosTransition = new p5(sketchTransition, 'hiperorganicosTransition');
-p5HiperorganicosTransition.setColor("#E32A8C");
+p5HiperorganicosTransition.setColor("#81BA27");
+
 
 
 //const p5Programacao = new p5(sketchHero, 'programacao');
