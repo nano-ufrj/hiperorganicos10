@@ -9,10 +9,10 @@ import './scrollspy';
 import p5 from "p5"
 import sketchHero from './sketches/sketch-hero';
 import sketchTransition from './sketches/sketch-transition';
+import sketchPlant from './sketches/sketch-plant';
 
 /* Demo JS */
 import './demo.js';
-import sketch from './sketches/sketch-hero';
 
 
 /**
@@ -22,6 +22,8 @@ const p5Hero = new p5(sketchHero, 'hero');
 
 const p5ProgramacaoTransition = new p5(sketchTransition, 'programacaoTransition');
 p5ProgramacaoTransition.setColor("#000000");
+
+const p5ProgramacaoPlant = new p5(sketchPlant, "programacaoPlant");
 
 const p5HiperorganicosTransition = new p5(sketchTransition, 'hiperorganicosTransition');
 p5HiperorganicosTransition.setColor("#E32A8C");
@@ -33,7 +35,7 @@ p5HiperorganicosTransition.setColor("#E32A8C");
 /**
 * Stop sketches when not visible
 */
-const monitorVisibility = [p5Hero, p5ProgramacaoTransition, p5HiperorganicosTransition];
+const monitorVisibility = [p5Hero, p5ProgramacaoTransition, p5HiperorganicosTransition, p5ProgramacaoPlant];
 const scrollEl = document.getElementsByClassName("horizontal-group")[0];
 
 function isVisible(el) {

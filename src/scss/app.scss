@@ -144,13 +144,19 @@ $small: 600px;
 
 #programacao {
     background-color: #E32A8C;
-    width: 1130px;
+    width: 1200px;
+    /*
     @media screen and (max-width: $medium) {
         width: 800px;
     }
     @media screen and (max-width: $small) {
         width: 90%;
     }
+    */
+}
+
+#programacaoPlant {
+    padding: 0px;
 }
 
 #hiperorganicos {
