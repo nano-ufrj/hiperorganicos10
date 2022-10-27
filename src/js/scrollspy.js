@@ -8,7 +8,8 @@ const makeNavLinksSmooth = ( ) => {
         e.preventDefault( );
         document.querySelector( navLinks[ n ].hash )
           .scrollIntoView( {
-            behavior: "smooth"
+            behavior: "smooth",
+            inline: "start"
           } );
       } );
     }
@@ -18,20 +19,21 @@ const makeNavLinksSmooth = ( ) => {
 const spyScrolling = ( ) => {
   const pages = document.querySelectorAll( '.page' );
 
-  window.onscroll = ( ) => {
+  const scrollEl = document.getElementsByClassName("horizontal-group")[0];
+  scrollEl.addEventListener('scroll', (event) => {
     for (i = 0; i < pages.length; ++i) {
       var rect = pages[i].getBoundingClientRect();
       if(rect.left <= window.innerWidth/2 && rect.right >= window.innerWidth/2){
-        document.querySelector( '.active' ).classList.remove( 'active' );
+        const active = document.querySelector( '.active' );
+        if(active)
+          active.classList.remove( 'active' );
         const id = pages[i].id;
-        document.querySelector( `a[href*=${ id }]` ).parentNode.classList.add( 'active' );
-        console.log(id)
+        document.querySelector( `a[href*=${ id }]` ).classList.add( 'active' );
         return;
       }
     }
-  } 
+  });
 }
-window.onload = function() {
-  makeNavLinksSmooth( );
-  spyScrolling( );
-};
+
+makeNavLinksSmooth( );
+spyScrolling( );
