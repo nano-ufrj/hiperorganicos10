@@ -21,7 +21,7 @@ import Physarum from './physarum'
 function sketch(p5) {
 
     var physarum;
-    const totalAgents = config.num_agents/5;
+    const totalAgents = p5.windowWidth < 800 ? config.num_agents/10 : config.num_agents/5;
 
     var mouseCounter = 0;
     const stepPerFrame = 200;
@@ -32,7 +32,7 @@ function sketch(p5) {
         p5.createCanvas(parent.offsetWidth, parent.offsetHeight);
         p5.pixelDensity(1);
         p5.background(0);
-        p5.strokeWeight(2);
+        p5.strokeWeight(p5.windowWidth < 800 ? 1 : 2);
         
         physarum = new Physarum(p5.width, p5.height, p5.drawingContext, new Float32Array(0), 0, 0, config);
 
