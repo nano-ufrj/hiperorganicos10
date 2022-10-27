@@ -20,7 +20,10 @@ $accordion-button-focus-border-color: "";
 // Then import Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-
+$color1: #E6227D;
+$color2: #392778;
+$color3: #33519E;
+$color4: #81BA27;
 
 $margin-top: 56px;
 $font: 'Montserrat', sans-serif;
@@ -143,9 +146,15 @@ $small: 600px;
     pointer-events: none;
 }
 
+
 #programacao {
-    background-color: #E32A8C;
+    background-color: $color4;
+    color: $color2;
     width: 1200px;
+
+    h1, h3{
+        color: $color1;
+    }
     /*
     @media screen and (max-width: $medium) {
         width: 800px;
@@ -162,8 +171,8 @@ $small: 600px;
 }
 
 #hiperorganicos {
-    background-color: #000000;
-    color: #E32A8C;
+    background-color: $color2;
+    color: $color4;
     width: 1300px;
 }
 

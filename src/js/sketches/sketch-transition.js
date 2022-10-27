@@ -35,6 +35,7 @@ function sketch(p5) {
         p5.pixelDensity(1);
         p5.clear();
         p5.strokeWeight(2);
+        p5.frameRate(30);
         
         var textureArr = new Float32Array(0);
         

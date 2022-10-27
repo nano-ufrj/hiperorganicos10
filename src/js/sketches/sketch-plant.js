@@ -23,6 +23,8 @@ function sketch(p5) {
     const totalAgents = config.num_agents/2;
 
     var mouseCounter = 0;
+    var randomCounter = 0;
+
     const stepPerFrame = 200;
     const color1 = "#000000";
 
@@ -89,6 +91,12 @@ function sketch(p5) {
                 mouseCounter++;
             }
         }
+
+        if(p5.frameCount%10==0){
+            const randomAgent = p5.random(physarum.agents);
+            randomAgent.x = p5.random(p5.width);
+            randomAgent.y = p5.random(p5.height);
+        }
         
         physarum.update();  
         physarum.draw();
@@ -103,11 +111,6 @@ function sketch(p5) {
                 color1
             );
         }
-    }
-
-    p5.windowResized = function() {
-        var parent = this.canvas.parentElement;
-        p5.resizeCanvas(parent.offsetWidth, parent.offsetHeight);
     }
 }
 

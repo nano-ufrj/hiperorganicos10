@@ -61,7 +61,7 @@ function sketch(p5) {
         }
         
         if (p5.mouseIsPressed) {
-            for(var i = 0; i < 40; i++){
+            for(var i = 0; i < 20; i++){
                 var a = physarum.agents[mouseCounter%physarum.agents.length];
                 a.x = p5.mouseX;
                 a.y = p5.mouseY;
