@@ -21,19 +21,11 @@ import Physarum from './physarum'
 function sketch(p5) {
 
     var physarum;
-    var img1;
-    var imageWidth, imageHeight;
-
-    var fade = 0;
-
     const totalAgents = config.num_agents/5;
 
+    var mouseCounter = 0;
     const stepPerFrame = 200;
     const colors = ["#E6227D", "#392778", "#33519E", "#81BA27"];
-
-    p5.preload = function(){
-        img1 = p5.loadImage("images/content/logo.png");
-    }
 
     p5.setup = function() {
         var parent = this.canvas.parentElement;
@@ -41,8 +33,6 @@ function sketch(p5) {
         p5.pixelDensity(1);
         p5.background(0);
         p5.strokeWeight(2);
-
-        calcImageSize();
         
         physarum = new Physarum(p5.width, p5.height, p5.drawingContext, new Float32Array(0), 0, 0, config);
 
@@ -72,18 +62,16 @@ function sketch(p5) {
         
         if (p5.mouseIsPressed) {
             for(var i = 0; i < 40; i++){
-                physarum.addAgent(p5.mouseX, p5.mouseY, p5.random(p5.TWO_PI), p5.random(colors));
+                var a = physarum.agents[mouseCounter%physarum.agents.length];
+                a.x = p5.mouseX;
+                a.y = p5.mouseY;
+                a.heading = p5.random(p5.TWO_PI);
+                mouseCounter++;
             }
         }
         
         physarum.update();  
         physarum.draw();
-        
-        if(p5.frameCount>30){
-            fade += 5;
-            p5.tint(255, p5.min(fade, 255));
-            p5.image(img1, (p5.width-imageWidth)/2, (p5.height-imageHeight)/2, imageWidth, imageHeight);
-        }
     }
 
     function regenerate() {
@@ -113,20 +101,9 @@ function sketch(p5) {
         }
     }
 
-    function calcImageSize(){
-        if(img1.width > p5.width - 100){
-            imageWidth = p5.width - 100;
-            imageHeight = img1.height * imageWidth / img1.width;
-        }else{
-            imageWidth = img1.width;
-            imageHeight = img1.height;
-        }
-    }
-
     p5.windowResized = function() {
         var parent = this.canvas.parentElement;
         p5.resizeCanvas(parent.offsetWidth, parent.offsetHeight);
-        calcImageSize();
     }
 }
 
