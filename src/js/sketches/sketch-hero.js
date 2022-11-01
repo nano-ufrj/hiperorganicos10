@@ -25,14 +25,15 @@ function sketch(p5) {
 
     var mouseCounter = 0;
     const stepPerFrame = 200;
-    const colors = ["#E6227D", "#392778", "#33519E", "#81BA27"];
+    const colors = ["#33519E", "#E6227D", "#392778", "#81BA27"];
+    const linkColors = ["#33519E", "#392778", "#81BA27", "#E6227D", "#E5301F", "#FF0000", "#DD2A7B"];
 
     p5.setup = function() {
         var parent = this.canvas.parentElement;
         p5.createCanvas(parent.offsetWidth, parent.offsetHeight);
         p5.pixelDensity(1);
-        p5.background(0);
-        p5.strokeWeight(p5.windowWidth < 800 ? 1 : 2);
+        p5.background(10);
+        p5.strokeWeight(1);
         
         physarum = new Physarum(p5.width, p5.height, p5.drawingContext, new Float32Array(0), 0, 0, config);
 
@@ -46,12 +47,34 @@ function sketch(p5) {
             }
         }
         changeSensorDistance();
+
+        const navLinks = document.querySelectorAll( '.nav-link' );
+        [...navLinks].forEach((link, index) => {
+            link.addEventListener('mouseover', e => {
+                paint(linkColors[index]);
+            });
+            link.addEventListener('mouseout', e => {
+                paint("random");
+            });
+        });
+    }
+
+    function paint(color){
+        if(color=="random"){
+            for(var i = 0; i < physarum.agents.length; i++){
+                physarum.agents[i].color = p5.random(colors);
+            }
+        }else{
+            for(var i = 0; i < physarum.agents.length; i++){
+                physarum.agents[i].color = color;
+            }
+        }
     }
 
 
     p5.draw = function() {
         p5.blendMode(p5.REMOVE);
-        p5.fill(0, 0, 0, 20);
+        p5.fill(0, 5);
         p5.noStroke();
         p5.rect(0, 0, p5.width, p5.height);
         p5.blendMode(p5.BLEND);
