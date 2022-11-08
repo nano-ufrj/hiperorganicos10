@@ -20,10 +20,10 @@ $accordion-button-focus-border-color: "";
 // Then import Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
-$color1: #E6227D;
-$color2: #392778;
-$color3: #33519E;
-$color4: #81BA27;
+$color1: rgb(230, 34, 125);
+$color2: rgb(57, 39, 120);
+$color3: rgb(51, 81, 158);
+$color4: rgb(129, 186, 39);
 
 $margin-top: 56px;
 $font: 'Montserrat', sans-serif;
@@ -43,12 +43,12 @@ h1, h2, h3 {
 *::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-    background-color: #B7A8E688;
+    background-color: rgba(lighten($color2, 30%), 0.5);
 }
 
 *::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background: #39277888;
+    background-color: rgba(lighten($color2, 30%), 0.8);
 }
 
 .nav-link {
@@ -71,10 +71,16 @@ h1, h2, h3 {
     display: flex;
     
     .page {
+        width: 90%;
         height: 100%;
         flex-direction: row;
         flex-shrink: 0;
         position: relative;
+
+        &:not(#hero) {
+            min-width: 640px;
+            max-width: 1000px;
+        }
         
         h1 {
             position: absolute;
@@ -120,6 +126,7 @@ h1, h2, h3 {
                 .col-transition{
                     z-index: 0;
                     margin-top: -$margin-top;
+                    flex: 0 0 200px;
                     height: calc(100% + $margin-top);
                     max-height: none;
                     padding: 0px;
@@ -145,13 +152,8 @@ h1, h2, h3 {
     }
 }
 
-
-$medium: 1200px;
-$small: 600px;
-
 #hero {
     background-color: #000;
-    width: 90%;
 }
 
 .logo {
@@ -167,36 +169,39 @@ $small: 600px;
 #programacao {
     background-color: $color4;
     color: $color2;
-    width: 1000px;
 
     h1, h3{
         color: $color1;
     }
-    /*
-    @media screen and (max-width: $medium) {
-        width: 800px;
-    }
-    @media screen and (max-width: $small) {
-        width: 90%;
-    }
-    */
-}
 
-#programacaoPlant {
-    position: absolute;
-    top: 60px;
-    right: 150px;
-    width: 400px;
-    height: 400px;
+    *::-webkit-scrollbar {
+        background-color: rgba(lighten($color4, 10%), 0.5);
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: rgba(darken($color4, 20%), 0.8);
+    }
+    
+    #programacaoPlant {
+        width: 100%;
+        height: 400px;
+    }
 }
 
 #hiperorganicos {
     background-color: $color2;
     color: $color4;
-    width: 1000px;
 }
 
 #comochegar {
-    width: 660px;
-    background-color: #E32A8C;
+    background-color: $color1;
+    min-width: 400px !important;
+
+    *::-webkit-scrollbar {
+        background-color: rgba(lighten($color1, 30%), 0.5);
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: rgba(darken($color1, 40%), 0.8);
+    }
 }
