@@ -22,21 +22,23 @@ const makeNavLinksSmooth = ( ) => {
 
   for ( let n in navLinks ) {
     if ( navLinks.hasOwnProperty( n ) ) {
-      navLinks[ n ].addEventListener( 'click', e => {
-        e.preventDefault( );
-        if(navLinks[ n ].hash){
-          if(menuToggle._isShown){
-            menuToggle.hide();
-            scrollTo = navLinks[ n ].hash;
-          }else{
-            document.querySelector( navLinks[ n ].hash )
-            .scrollIntoView( {
-              behavior: "smooth",
-              inline: "start"
-            });
+      if(navLinks[ n ].hash){
+        navLinks[ n ].addEventListener( 'click', e => {
+          e.preventDefault( );
+          if(navLinks[ n ].hash){
+            if(menuToggle._isShown){
+              menuToggle.hide();
+              scrollTo = navLinks[ n ].hash;
+            }else{
+              document.querySelector( navLinks[ n ].hash )
+              .scrollIntoView( {
+                behavior: "smooth",
+                inline: "start"
+              });
+            }
           }
-        }
-      });
+        });
+      }
     }
   }
 }
