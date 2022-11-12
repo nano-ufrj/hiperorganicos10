@@ -1,0 +1,81 @@
+{
+    "simposio": [
+        {
+            "name":"Cosmogonias Vegetais e arte",
+            "date":"2022-11-23",
+            "startTime":"09:15",
+            "endTime":"10:45",
+            "participants":[
+                "Carl Smith",
+                "Eduardo Luna",
+                "Olga Kisseleva"
+            ]
+        },
+        {
+            "name":"Biota Poética - artistas e seus processos",
+            "date":"2022-11-23",
+            "startTime":"11:00",
+            "endTime":"12:15",
+            "participants":[
+                "Cesar & Lois",
+                "Felipe Pais",
+                "Marília Bergamo"
+            ]
+        },
+        {
+            "name":"Ecologia e Cultura - relações com a natureza",
+            "date":"2022-11-23",
+            "startTime":"13:30",
+            "endTime":"14:45",
+            "participants":[
+                "Adriana Hemerly",
+                "Elba Daris R. Rubio",
+                "Karla Brunet",
+                "Malu e Guto",
+                "Paola Barreto"
+            ]
+        },
+        {
+            "name":"Hábitats Híbridos Multiespécie",
+            "date":"2022-11-23",
+            "startTime":"15:00",
+            "endTime":"16:00",
+            "participants":[
+                "Clara Acioli",
+                "Izadora",
+                "Juliana Vilarino",
+                "Nadine Nicolay"
+            ]
+        },
+        {
+            "name":"Simbioses Semânticas - criação de mundos e experiências interconectadas ",
+            "date":"2022-11-23",
+            "startTime":"16:00",
+            "endTime":"17:00",
+            "participants":[
+                "Arthur Cabral",
+                "Carlos Oliveira (Vamoss)",
+                "Patricia Oakim",
+                "Sérgio Venâncio"
+            ]
+        }
+    ],
+    "openlab": [
+        {
+            "name":"Performances",
+            "date":"2022-11-25",
+            "startTime":"13:00",
+            "endTime":"17:00",
+            "participants":[
+                "Carlos Oliveira (Vamoss)",
+                "Cesar & Louis",
+                "Cila Macdowell",
+                "Edgard Franco",
+                "Francisco Barreto",
+                "Jarbas Jacome",
+                "Jonas Esteves",
+                "Orquestra de Laptops"
+            ]
+        }
+    ]
+}
