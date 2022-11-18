@@ -5,58 +5,66 @@
             "date":"2022-11-23",
             "startTime":"09:00",
             "endTime":"10:45",
+            "link": "https://youtu.be/7Xz98eUAq8g",
             "participants":[
-                "Carl Smith",
-                "Eduardo Luna",
-                "Olga Kisseleva"
-            ]
+                "Carl Smith - London Metropolitan University",
+                "Eduardo Luna - Wasiwaska Research Center",
+                "Olga Kisseleva - Paris I"
+            ],
+            "moderation": "Guto e Malu - UFRJ"
         },
         {
             "name":"Biota Poética - artistas e seus processos",
             "date":"2022-11-23",
-            "startTime":"11:00",
-            "endTime":"12:15",
+            "startTime":"10:45",
+            "endTime":"12:00",
+            "link": "https://youtu.be/ED6N5L7pj_M",
             "participants":[
-                "Cesar & Lois",
-                "Felipe Pais",
-                "Marília Bergamo"
-            ]
+                "Cesar & Lois - UNICAMP e EUA",
+                "Felipe Pais - PSL Research University",
+                "Marília Bergamo - UFMG",
+                "Paola Barreto - UFBA"
+            ],
+            "moderation": "Guto e Malu - UFRJ"
         },
         {
             "name":"Ecologia e Cultura - relações com a natureza",
             "date":"2022-11-23",
             "startTime":"13:30",
             "endTime":"14:45",
+            "link": "https://youtu.be/_vT-Kv9EWWo",
             "participants":[
-                "Elba Daris R. Rubio",
-                "Karla Brunet",
-                "Malu e Guto",
-                "Paola Barreto"
-            ]
+                "Elba Daris R. Rubio - UNAM",
+                "Karla Brunet - UFBA"
+            ],
+            "moderation": "Guto e Malu - UFRJ"
         },
         {
             "name":"Hábitats Híbridos Multiespécie",
             "date":"2022-11-23",
             "startTime":"15:00",
             "endTime":"16:00",
+            "link": "https://youtu.be/-vm8dCz4lH8",
             "participants":[
-                "Clara Acioli",
-                "Izadora",
-                "Juliana Vilarino",
-                "Nadine Nicolay"
-            ]
+                "Clara Acioli - Pesquisadora Independente",
+                "Izadora Alves - UFRJ",
+                "Juliana Vilarino - UFRJ",
+                "Nadine Nicolay - UFRJ"
+            ],
+            "moderation": "Guto e Malu - UFRJ"
         },
         {
             "name":"Simbioses Semânticas - criação de mundos e experiências interconectadas ",
             "date":"2022-11-23",
             "startTime":"16:00",
             "endTime":"17:00",
+            "link": "https://youtu.be/4L_rs1boiM4",
             "participants":[
-                "Arthur Cabral",
-                "Carlos Oliveira (Vamoss)",
-                "Patricia Oakim",
-                "Sérgio Venâncio"
-            ]
+                "Arthur Cabral - UnB",
+                "Patricia Oakim - ITP e PUCSP",
+                "Sérgio Venâncio - USP"
+            ],
+            "moderation": "Carlos Oliveira (Vamoss) - UFRJ"
         }
     ],
     "openlab": [
@@ -65,14 +73,19 @@
             "date":"2022-11-25",
             "startTime":"13:00",
             "endTime":"17:00",
+            "link": "https://youtu.be/_m7xuDC5wxs",
             "participants":[
+                "Bernardo Fontes (Berin)",
                 "Carlos Oliveira (Vamoss)",
                 "Cesar & Louis",
                 "Cila Macdowell",
+                "Dani Spadotto",
                 "Edgard Franco",
                 "Francisco Barreto",
                 "Jarbas Jacome",
                 "Jonas Esteves",
+                "Lucas Saccon",
+                "Mário César Lins Filho",
                 "Orquestra de Laptops"
             ]
         }
