@@ -38,10 +38,14 @@ p5HiperorganicosTransition.setColor("#81BA27");
 const simposioEl = document.getElementById("simposio");
 const openlabEl = document.getElementById("openlab");
 
-function addSchedule(container, schedule, counter){
-    console.log(schedule);
+function addSchedule(container, schedule, counter, showFinishTime){
     const div = document.createElement("div");
     div.className = "accordion-item";
+
+    var title = schedule.startTime;
+    if(showFinishTime)
+        title += "/" + schedule.endTime;
+    title += " - " + schedule.name;
 
     var participantes = "";
     schedule.participants.forEach(participant => {
@@ -56,7 +60,7 @@ function addSchedule(container, schedule, counter){
 
     div.innerHTML = `<h2 class="accordion-header" id="panel-heading${counter}">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse${counter}" aria-expanded="false" aria-controls="panel-collapse${counter}">
-                            ${schedule.startTime + " - " + schedule.name}
+                            ${title}
                         </button>
                     </h2>
                     <div id="panel-collapse${counter}" class="accordion-collapse collapse" aria-labelledby="panel-heading${counter}">
@@ -103,12 +107,12 @@ function addSchedule(container, schedule, counter){
 
 var counter = 1;
 programacaoData.simposio.forEach(schedule => {
-    addSchedule(simposioEl, schedule, counter);
+    addSchedule(simposioEl, schedule, counter, false);
     counter++;
 });
 
 programacaoData.openlab.forEach(schedule => {
-    addSchedule(openlabEl, schedule, counter);
+    addSchedule(openlabEl, schedule, counter, true);
     counter++;
 });
 

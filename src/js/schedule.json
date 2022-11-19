@@ -1,17 +1,27 @@
 {
     "simposio": [
         {
-            "name":"Cosmogonias Vegetais e arte",
+            "name":"Abertura",
             "date":"2022-11-23",
             "startTime":"09:00",
+            "endTime":"09:15",
+            "link": "https://youtu.be/7Xz98eUAq8g",
+            "participants":[
+                "Guto Nóbrega e Malu Fragoso - UFRJ"
+            ]
+        },
+        {
+            "name":"Cosmogonias Vegetais e arte",
+            "date":"2022-11-23",
+            "startTime":"09:15",
             "endTime":"10:45",
             "link": "https://youtu.be/7Xz98eUAq8g",
             "participants":[
-                "Carl Smith - London Metropolitan University",
+                "Carl Smith - Ravensbourne University London",
                 "Eduardo Luna - Wasiwaska Research Center",
                 "Olga Kisseleva - Paris I"
             ],
-            "moderation": "Guto e Malu - UFRJ"
+            "moderation": "Guto Nóbrega e Malu Fragoso - UFRJ"
         },
         {
             "name":"Biota Poética - artistas e seus processos",
@@ -21,11 +31,11 @@
             "link": "https://youtu.be/ED6N5L7pj_M",
             "participants":[
                 "Cesar & Lois - UNICAMP e EUA",
-                "Felipe Pais - PSL Research University",
+                "Filipe Pais - PSL Research University",
                 "Marília Bergamo - UFMG",
                 "Paola Barreto - UFBA"
             ],
-            "moderation": "Guto e Malu - UFRJ"
+            "moderation": "Guto Nóbrega e Malu Fragoso - UFRJ"
         },
         {
             "name":"Ecologia e Cultura - relações com a natureza",
@@ -35,9 +45,10 @@
             "link": "https://youtu.be/_vT-Kv9EWWo",
             "participants":[
                 "Elba Daris R. Rubio - UNAM",
-                "Karla Brunet - UFBA"
+                "Karla Brunet - UFBA",
+                "Guto Nóbrega e Malu Fragoso - UFRJ"
             ],
-            "moderation": "Guto e Malu - UFRJ"
+            "moderation": "Guto Nóbrega e Malu Fragoso - UFRJ"
         },
         {
             "name":"Hábitats Híbridos Multiespécie",
@@ -51,7 +62,7 @@
                 "Juliana Vilarino - UFRJ",
                 "Nadine Nicolay - UFRJ"
             ],
-            "moderation": "Guto e Malu - UFRJ"
+            "moderation": "Guto Nóbrega e Malu Fragoso - UFRJ"
         },
         {
             "name":"Simbioses Semânticas - criação de mundos e experiências interconectadas ",
@@ -71,7 +82,7 @@
         {
             "name":"Performances",
             "date":"2022-11-25",
-            "startTime":"13:00",
+            "startTime":"09:00",
             "endTime":"17:00",
             "link": "https://youtu.be/_m7xuDC5wxs",
             "participants":[
