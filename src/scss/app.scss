@@ -234,7 +234,7 @@ h1, h2, h3, strong {
         height: 400px;
     }
 
-    .buttonYT{
+    .buttonCta{
         align-items: center;
         border-radius: 6px;
         cursor: pointer;
@@ -242,10 +242,7 @@ h1, h2, h3, strong {
         font-weight: 600;
         justify-content: center;
         line-height: 1.5em;
-        margin: 0.13em;
         margin-left: 5px;
-        max-width: 350px;
-        min-width: 160px;
         padding: 0.65em 1em;
         position: relative;
         text-align: center;
@@ -253,21 +250,31 @@ h1, h2, h3, strong {
         user-select: none;
         -webkit-user-select: none;
         -webkit-tap-highlight-color: transparent;
-        width: auto;
         z-index: 1;
         height: 3em;
 
-        .yt-icon{
-            height: 1em;
+        .icon{
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            float: left;
+            margin-right: 10px;
+        }
 
-            svg {
-                width: 30px;
-                height: 30px;
+        &.buttonYT{
+            .icon{
+                background-image: url(../images/content/youtube.svg);           
+            }
+        }
+
+        &.buttonJoin{
+            .icon{
+                background-image: url(../images/content/form.svg);           
             }
         }
     }
 
-    .atcb-button, .buttonYT{
+    .atcb-button, .buttonCta{
         background-color: lighten($color1, 0%);
         border: 1px solid lighten($color1, 0%);
         box-shadow: lighten($color1, 0%) 2px 5px 18px -1px, lighten($color1, 0%) 2px 2px 10px -3px;
@@ -275,7 +282,7 @@ h1, h2, h3, strong {
         transition: box-shadow 0.5s;
     }
 
-    .atcb-button:hover, .buttonYT:hover{
+    .atcb-button:hover, .buttonCta:hover{
         box-shadow: lighten($color1, 0%) 2px 10px 18px -1px, lighten($color1, 0%) 2px 2px 10px -3px;
     }
 }

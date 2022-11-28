@@ -80,31 +80,41 @@
     ],
     "openlab": [
         {
-            "name":"Performances",
+            "name":"Introdução à rede Ninjam e Jamtaba para improvisação musical on-line",
             "date":"2022-11-25",
             "startTime":"09:00",
+            "endTime":"11:00",
+            "join": "https://docs.google.com/forms/d/e/1FAIpQLSeqoq91auV-wne4qYPyloL8_lmiGZIjyR1P5sxBpT6xH8V2lw/viewform",
+            "participants":[
+                "Jarbas Jácome de Oliveira Júnior - UFRB",
+                "Jackson Marinho - UnB"
+            ]
+        },
+        {
+            "name":"Performances",
+            "date":"2022-11-25",
+            "startTime":"10:00",
             "endTime":"17:00",
-            "link": "https://youtu.be/_m7xuDC5wxs",
+            "link": "https://youtu.be/iZp9E_isNnQ",
             "participants":[
                 "Ana Clara Guinle",
                 "Artur Cabral Reis",
                 "Bernardo Fontes (Berin)",
-                "Brenda Spinosa Francisco",
-                "Camila de Oliveira Ferreira Leite",
+                "Bruna Machado",
+                "Camila Leite",
                 "Carlos Oliveira (Vamoss)",
                 "Cesar & Louis",
-                "Cila Macdowell",
-                "Dani Spadotto",
                 "Elba Daris Rivera Rubio",
                 "Francisco Barreto",
-                "Izadora da Silva Alves",
-                "Jarbas Jacome",
+                "Isabella Raposo",
+                "Izadora Alves",
                 "Jonas Esteves de Bem",
                 "Lucas Toledo Saccon",
                 "Mário César Rodrigues de Freitas Lins Filho",
                 "Orquestra de Laptops",
-                "Rafael Peña Turatti",
-                "Rubens Takamine"
+                "Rubens Takamine",
+                "Sofia Reis",
+                "WiW"
             ]
         }
     ]

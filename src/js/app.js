@@ -13,7 +13,6 @@ import sketchPlant from './sketches/sketch-plant';
 
 /* programação data */
 import programacaoData from './schedule.json';
-import { atcb_action, atcb_init } from 'add-to-calendar-button';
 
 /* Demo JS */
 import './demo.js';
@@ -58,6 +57,22 @@ function addSchedule(container, schedule, counter, showFinishTime){
                       <ul>${schedule.moderation}</ul>`
     }
 
+    var link = "";
+    var cta = "";
+    var buttonLabel = "";
+    var buttonClass = "";
+    if(schedule.link){
+        link = schedule.link;
+        cta = `"Participe também pelo YouTube: [url]${schedule.link}[/url]"`;
+        buttonLabel = "Assistir";
+        buttonClass = "buttonYT";
+    }else if(schedule.join){
+        link = schedule.join;
+        cta = `"Inscreva-se pelo link: [url]${schedule.join}[/url]"`;
+        buttonLabel = "Inscrever-se";
+        buttonClass = "buttonJoin";
+    }    
+
     div.innerHTML = `<h2 class="accordion-header" id="panel-heading${counter}">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panel-collapse${counter}" aria-expanded="false" aria-controls="panel-collapse${counter}">
                             ${title}
@@ -68,37 +83,9 @@ function addSchedule(container, schedule, counter, showFinishTime){
                             <p><strong>Participantes:</strong></p>
                             <ul>${participantes}</ul>
                             ${moderation}
-                            <div class="atcb">
-                            {
-                                "name": "HIPER10 - ${schedule.name}",
-                                "description": "Participe também pelo YouTube: [url]${schedule.link}[/url]",
-                                "startDate": "${schedule.date}",
-                                "endDate": "${schedule.date}",
-                                "startTime": "${schedule.startTime}",
-                                "endTime": "${schedule.endTime}",
-                                "location": "R. Aloísio Teixeira, 564 - Cidade Universitária da Universidade Federal do Rio de Janeiro, Rio de Janeiro - RJ, 21941-850",
-                                "label": "Adicionar na agenda",
-                                "options":[
-                                    "Apple",
-                                    "Google",
-                                    "iCal",
-                                    "Microsoft365",
-                                    "MicrosoftTeams",
-                                    "Outlook.com",
-                                    "Yahoo"
-                                ],
-                                "timeZone":"America/Sao_Paulo",
-                                "trigger":"click",
-                                "inline":true,
-                                "listStyle":"modal",
-                                "iCalFileName":"Reminder-Event"
-                            }
-                            </div>
-                            <button class="buttonYT" type="button" onclick=" window.open('${schedule.link}','_blank')">
-                                <span class="yt-icon"><?xml version="1.0" encoding="UTF-8"?>
-                                    <svg version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path fill="white" d="m171.45 107.34c-39.02 3.0664-68.512 34.793-70.41 73.887-1.5664 32.211-3.0352 69.273-3.0352 94.859 0 25.879 1.5039 63.504 3.0898 95.965 1.8828 38.594 30.699 70.109 69.176 73.664 42.59 3.9297 104.21 7.8906 179.73 7.8906 75.324 0 136.82-3.9375 179.4-7.8594 38.625-3.5586 67.5-35.281 69.355-74.023 1.6406-34.18 3.2422-73.289 3.2422-95.637 0-22.105-1.5664-60.617-3.1875-94.531-1.875-39.246-31.414-71.168-70.582-74.238-41.922-3.2852-102.39-6.5117-178.23-6.5117-76.035 0-136.62 3.2422-178.55 6.5352zm128.16 93.945 129.92 74.801-129.92 74.805z" fill-rule="evenodd"/></g></svg></span>
-                                    Assistir
-                                </div>
+                            <button class="buttonCta ${buttonClass}" type="button" onclick=" window.open('${link}','_blank')">
+                                <span class="icon"></span>
+                                ${buttonLabel}
                             </button>
                         </div>
                     </div>`;
@@ -114,10 +101,6 @@ programacaoData.simposio.forEach(schedule => {
 programacaoData.openlab.forEach(schedule => {
     addSchedule(openlabEl, schedule, counter, true);
     counter++;
-});
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    atcb_init();
 });
 
 
